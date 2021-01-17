@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors Exercise</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+
+    const choices = ["rock", "paper", "scissors"];
+    
+    function computerPlay(){
+        // Randomly generate interval 0, 1, or 2
+        let randomNumber = Math.floor(Math.random() * choices.length);
+
+        // Selects string from choices array based on random interval from above
+        let computerSelectionString = choices[randomNumber];
+
+        // Returns the string selected from the array
+        return computerSelectionString;
+    }
+
+    function playerPlay(){
+        // Sets loop variable to 0
+        let doFinished = 0;
+
+        // Prompts user for input until valid input received
+        do {
+            playerInput = prompt("'rock', 'paper', or 'scissors'?").toLowerCase();
+            if (playerInput === "rock" || playerInput === "paper" || playerInput === "scissors"){
+                doFinished = 1;
+            }
+        } while (doFinished !== 1);
+
+        // Returns valid user input
+        return playerInput;
+    }
+
+    let computerSelection = computerPlay();
+    playerPlay();
+    console.log(playerInput);
+
+  </script>
+</body>
+</html>
