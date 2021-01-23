@@ -78,14 +78,71 @@
       }
     }
 
+    function game(){
+      // New game welcome
+      console.log("\nLet's play some Rock, Paper, Scissors!\n\n")
+
+      // Resets scores to 0 at beginning of game
+      playerScore = 0;
+      computerScore = 0;
+
+      // Selections for first round - initializes the relevant variables
+      let computerSelection = computerPlay();
+      let playerSelection = playerPlay();
+
+      // Five rounds of play
+      singleRound(computerSelection, playerSelection);
+      console.log("Player Score =", playerScore);
+      console.log("Computer Score =", computerScore);
+
+      computerSelection = computerPlay();
+      playerSelection = playerPlay();
+
+      singleRound(computerSelection, playerSelection);
+      console.log("Player Score =", playerScore);
+      console.log("Computer Score =", computerScore);
+
+      computerSelection = computerPlay();
+      playerSelection = playerPlay();
+
+      singleRound(computerSelection, playerSelection);
+      console.log("Player Score =", playerScore);
+      console.log("Computer Score =", computerScore);
+
+      computerSelection = computerPlay();
+      playerSelection = playerPlay();
+
+      singleRound(computerSelection, playerSelection);
+      console.log("Player Score =", playerScore);
+      console.log("Computer Score =", computerScore);
+
+      computerSelection = computerPlay();
+      playerSelection = playerPlay();
+
+      singleRound(computerSelection, playerSelection);
+      console.log("Player Score =", playerScore);
+      console.log("Computer Score =", computerScore);
+
+      // End of game message in console
+      console.log("\nMATCH SET!\n\n")
+
+      // Alerts the game outcome based on the final score
+      if (playerScore === computerScore){
+        alert("It's a tie game!");
+      }
+      else if (playerScore > computerScore){
+        alert("You win the game!");
+      }
+      else{
+        alert("You lose the game!");
+      }
+
+    }
+
     let playerScore = 0;
     let computerScore = 0;
-    let computerSelection = computerPlay();
-    let playerSelection = playerPlay();
-    singleRound(computerSelection, playerSelection);
-    console.log("Player Score =", playerScore);
-    console.log("Computer Score =", computerScore);
 
+    game();
 
   </script>
 </body>
