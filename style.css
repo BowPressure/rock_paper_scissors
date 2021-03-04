@@ -1,0 +1,37 @@
+* { /* reset margins and paddings on all elements */
+	margin:0;
+	padding:0;
+}
+
+p {
+	color:#ffffff;
+}
+
+body::before {
+		content:""; /* required for ::before */
+		position:fixed; /* don't scroll with page */
+		z-index:-100; /* place behind elements on page */
+		width:100%;
+		height:100%;
+		background-color:#000000;
+		background-image: 
+		radial-gradient(circle at top, transparent, #85147b), radial-gradient(circle at bottom, transparent, #08864b);
+		animation:backgroundShift 12s infinite;
+}
+
+#gameSpace {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	row-gap:25px;
+	text-align: center;
+}
+
+@keyframes backgroundShift {
+	0%,100% {
+		filter:hue-rotate(0deg);
+	}
+    50% {
+        filter:hue-rotate(-90deg);
+    }
+}

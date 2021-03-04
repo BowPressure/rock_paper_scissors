@@ -1,149 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rock Paper Scissors Exercise</title>
+  <title>Rock Paper Scissors</title>
   <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-  <script>
 
-    const choices = ["rock", "paper", "scissors"];
+<div id="gameSpace">
 
+  <div id="startButton">
+    <button id="start">start</button>
+  </div>
 
-    // 0 = rock, 1 = paper, 2 = scissors
+  <div id="choiceButtons">
 
-    function computerPlay(){
-        // Randomly generate integer 0, 1, or 2
-        let computerChoice = Math.floor(Math.random() * choices.length);
+  </div>
 
-        /*
-        // Selects string from choices array based on random integer from above
-        let computerSelectionString = choices[randomNumber];
-        */
+  <div id="scores">
+    <p>Player Score: <span id="pScore"></span></p>
+    <p>Computer Score: <span id="cScore"></span></p>
+  </div>
 
-        // Returns the string selected from the array
-        return computerChoice;
-    }
+  <div>
+    <p id="result"></p>
+  </div>
 
-    function playerPlay(){
-        // Sets loop variable to 0
-        let doFinished = 0;
+  </div>
 
-        // Prompts user for input until valid input received
-        do {
-            playerInput = prompt("'rock', 'paper', or 'scissors'?");
-
-            if (playerInput === null){
-              alert("FACE ME COWARD!");
-            }
-            else {
-              playerInput = playerInput.toLowerCase();
-            }
-
-            if (playerInput === "rock" || playerInput === "paper" || playerInput === "scissors"){
-                doFinished = 1;
-            }
-        } while (doFinished !== 1);
-
-        // Converts playerInput to integer
-        if (playerInput === "rock"){
-          playerInput = 0;
-        }
-        else if (playerInput === "paper"){
-          playerInput = 1;
-        }
-        else if (playerInput === "scissors"){
-          playerInput = 2;
-        }
-
-        // Returns valid user input
-        return playerInput;
-    }
-
-    function singleRound (computerSelection,playerSelection){
-      console.log("Player Choice =",choices[playerSelection]);
-      console.log("Computer Choice =",choices[computerSelection]);
-
-      // If game is tied
-      if (playerSelection === computerSelection){
-        console.log("It's a tie!");
-      }
-      else if ((playerSelection === 0 && computerSelection === 2) || (playerSelection === 1 && computerSelection === 0) || (playerSelection === 2 && computerSelection === 1)){
-        console.log("You win!");
-        playerScore += 1;
-      }
-      else {
-        console.log("You lose!");
-        computerScore += 1;
-      }
-    }
-
-    function game(){
-      // New game welcome
-      console.log("\nLet's play some Rock, Paper, Scissors!\n\n")
-
-      // Resets scores to 0 at beginning of game
-      playerScore = 0;
-      computerScore = 0;
-
-      // Selections for first round - initializes the relevant variables
-      let computerSelection = computerPlay();
-      let playerSelection = playerPlay();
-
-      // Five rounds of play
-      singleRound(computerSelection, playerSelection);
-      console.log("Player Score =", playerScore);
-      console.log("Computer Score =", computerScore);
-
-      computerSelection = computerPlay();
-      playerSelection = playerPlay();
-
-      singleRound(computerSelection, playerSelection);
-      console.log("Player Score =", playerScore);
-      console.log("Computer Score =", computerScore);
-
-      computerSelection = computerPlay();
-      playerSelection = playerPlay();
-
-      singleRound(computerSelection, playerSelection);
-      console.log("Player Score =", playerScore);
-      console.log("Computer Score =", computerScore);
-
-      computerSelection = computerPlay();
-      playerSelection = playerPlay();
-
-      singleRound(computerSelection, playerSelection);
-      console.log("Player Score =", playerScore);
-      console.log("Computer Score =", computerScore);
-
-      computerSelection = computerPlay();
-      playerSelection = playerPlay();
-
-      singleRound(computerSelection, playerSelection);
-      console.log("Player Score =", playerScore);
-      console.log("Computer Score =", computerScore);
-
-      // End of game message in console
-      console.log("\nMATCH SET!\n\n")
-
-      // Alerts the game outcome based on the final score
-      if (playerScore === computerScore){
-        alert("It's a tie game!");
-      }
-      else if (playerScore > computerScore){
-        alert("You win the game!");
-      }
-      else{
-        alert("You lose the game!");
-      }
-
-    }
-
-    let playerScore = 0;
-    let computerScore = 0;
-
-    game();
-
-  </script>
 </body>
 </html>
